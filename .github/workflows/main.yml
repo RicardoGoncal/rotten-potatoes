@@ -33,4 +33,4 @@ jobs:
           push: true
           tags: |
             ricardogoncal/rotten-potatoes:latest
-            ricardogoncal/rotten-potatoes: ${{ github.run_number }}
+            ricardogoncal/rotten-potatoes:${{ github.run_number }}
