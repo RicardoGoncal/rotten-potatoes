@@ -52,7 +52,7 @@ jobs:
           # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
           creds: ${{ secrets.AZURE_CREDS }}
           # Resource Group Name
-          resource-group: MC_kubedev_kubedev-ci-cd_centralus
+          resource-group: kubedev
           # AKS Cluster Name
           cluster-name: kubedev-ci-cd"
       
