@@ -40,3 +40,20 @@ jobs:
           tags: |
             ricardogoncal/rotten-potatoes:latest
             ricardogoncal/rotten-potatoes:${{ github.run_number }}
+
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Azure Kubernetes set context
+        uses: Azure/aks-set-context@v1.1
+        with:
+          # Azure credentials i.e. output of `az ad sp create-for-rbac --sdk-auth`
+          creds: ${{ secrets.AZURE_CREDS }}
+          # Resource Group Name
+          resource-group: MC_kubedev_kubedev-ci-cd_centralus
+          # AKS Cluster Name
+          cluster-name: kubedev-ci-cd"
+      
+      
